@@ -146,18 +146,17 @@ ZITNMF <- function(X, Z=NULL, pseudocount=1e-10,
 }
 
 .rho <- function(Beta){
-	if(Beta < 1){
-        1 / (2 - Beta)
-	}
-	if((1 <= Beta) && (Beta <= 2)){
-        1
-	}
-	if(Beta > 2){
-		1 / (Beta - 1)
-	}
+    if(Beta < 1){
+        rho_beta <- 1 / (2 - Beta)
+    }
+    if((1 <= Beta) && (Beta <= 2)){
+        rho_beta <- 1
+    }
+    if(Beta > 2){
+        rho_beta <- 1 / (Beta - 1)
+    }
+    rho_beta
 }
-
-
 
 ## Simulation Dataset
 
